@@ -1,0 +1,12 @@
+<input type="text" #txt>
+
+<button (click)="getVal(txt)">search</button>
+
+<div *ngFor = "let class of class" >
+    <p>
+         {{ class.class}}
+         :- {{class.description}}
+     </p>
+     
+
+</div>

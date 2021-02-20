@@ -1,0 +1,21 @@
+<input type="text" #txt>
+
+<button (click)="getVal(txt)">search</button>
+
+<select (change)="selectChangeHandler($event)">
+    <option value="Fived">Five Digit Code</option>
+    <option value="Class">Class</option>
+    <option value="Group">Group</option>
+    <option value="Division">Division</option>
+    <option value="Section">Section</option>
+</select>
+<p>Results from {{searchBy}}</p>
+
+<div *ngFor = "let fived of fived" >
+    <p>
+         {{ fived.fived}}
+         :- {{fived.description}}
+     </p>
+     
+
+</div>

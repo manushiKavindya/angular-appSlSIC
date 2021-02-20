@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "angular-appSlSIC"
+  "defaultProject": "angular-appSlSIC",
+  "cli": {
+    "analytics": "a1a13ddb-4921-4a5e-b565-acb6dfd52a25"
+  }
 }
