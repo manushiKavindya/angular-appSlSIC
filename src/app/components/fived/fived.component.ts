@@ -8,37 +8,37 @@ import { FiveDService } from '../../services/fived.service';
   styleUrls: ['./fived.component.css']
 })
 export class FiveDComponent implements OnInit {
-   fived:FiveD[]; 
-   searchBy:string;
-  //  @Input() item1: FiveD;
-  selectChangeHandler (event:any){
+  fived: FiveD[];
+  searchBy: string;
+  results: number = 0;
+  selectChangeHandler(event: any) {
     this.searchBy = event.target.value;
     return this.searchBy;
   }
 
-  constructor(private fivedService:FiveDService) { }
+  constructor(private fivedService: FiveDService) { }
 
   ngOnInit(): void {
-    // const userInput:string = "fish";
-    if(this.searchBy = "Fived"){
-      console.log(this.searchBy);
-    }
-  
   }
- 
-  
 
-  getVal(item){
-    const userInput:string = item.value;
+  selectLevel() {
+    console.log(this.searchBy);
+  }
 
-    // if(searchBy=="Fived"){
+  getVal(item) {
+    if (item) {
+      const userInput: string = item.value;
       this.fivedService.getIsics(userInput).subscribe(fiveds => {
         this.fived = fiveds.DATA;
       })
-  
 
-    // }
-    // console.log(userInput)
+      this.results = this.fived.length;
+
+    } else {
+      console.log('empty');
+
+      alert('Give a Keyword');
+    }
   }
 
 

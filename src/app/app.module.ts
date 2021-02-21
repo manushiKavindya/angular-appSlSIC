@@ -10,10 +10,6 @@ import { DivisionComponent } from './components/division/division.component';
 import { GroupComponent } from './components/group/group.component';
 import { SectionComponent } from './components/section/section.component';
 import { UsersComponent } from './components/users/users.component';
-import { ClassItemComponent } from './components/class-item/class-item.component';
-import { GroupItemComponent } from './components/group-item/group-item.component';
-import { DivItemComponent } from './components/div-item/div-item.component';
-import { ScnItemComponent } from './components/scn-item/scn-item.component';
 
 @NgModule({
   declarations: [
@@ -24,10 +20,6 @@ import { ScnItemComponent } from './components/scn-item/scn-item.component';
     GroupComponent,
     SectionComponent,
     UsersComponent,
-    ClassItemComponent,
-    GroupItemComponent,
-    DivItemComponent,
-    ScnItemComponent,
   ],
   imports: [
     BrowserModule,

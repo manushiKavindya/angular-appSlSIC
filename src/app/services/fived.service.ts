@@ -14,6 +14,7 @@ export class FiveDService {
 
   constructor(private http:HttpClient) { }
 
+
   getIsics(keyWord:string):Observable<{ DATA: FiveD[] }> {
     const fivedsURL:string = environment.apiBase + '/fived/' + keyWord;
 
