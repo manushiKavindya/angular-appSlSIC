@@ -1,12 +1,15 @@
-<input type="text" #txt>
-
-<button (click)="getVal(txt)">search</button>
-
-<div *ngFor = "let class of class" >
+<p> This is page of the details </p>
+<div>
     <p>
-         {{ class.class}}
-         :- {{class.description}}
-     </p>
-     
-
+        {{details.fived}}
+        :- {{ details.description }}
+        {{details.class}}
+        {{details.classDescription}}
+        {{details.group}}
+        {{details.groupDescription}}
+        {{details.division}}
+        {{details.divisionDescription}}
+        {{details.section}}
+        {{details.sectionDescription}}
+    </p>
 </div>

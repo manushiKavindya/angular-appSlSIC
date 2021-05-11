@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Div } from '../../models/DIv';
+import { Div } from '../../models/Div';
 import { DivisionService } from '../../services/division.service';
 
 @Component({

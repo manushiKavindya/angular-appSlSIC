@@ -9,6 +9,8 @@ import { ClassService } from '../../services/class.service';
 })
 export class ClassComponent implements OnInit {
   class:Class[]; 
+  details:Class;
+
 
   constructor(private classService:ClassService) { }
 

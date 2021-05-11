@@ -3,6 +3,7 @@ export class Div {
     section: string;
     division: string;
     description: string;
+    sectionDescription: string;
     is_deleted: boolean;
 
 }
