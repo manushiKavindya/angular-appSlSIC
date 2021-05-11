@@ -1,15 +1,38 @@
-<p> This is page of the details </p>
-<div>
-    <p>
-        {{details.fived}}
-        :- {{ details.description }}
-        {{details.class}}
-        {{details.classDescription}}
-        {{details.group}}
-        {{details.groupDescription}}
-        {{details.division}}
-        {{details.divisionDescription}}
-        {{details.section}}
-        {{details.sectionDescription}}
-    </p>
+<div id="back2" class="container">
+    <div>
+        <mat-card id="card">
+            <mat-card-title>
+                <p color="primary">
+                    {{details.fived}}
+                    {{details.description}}
+                </p>
+            </mat-card-title>
+            <mat-card-content>
+                <p matLine>
+                    {{details.section}}
+                    :- {{details.scnDescription}}
+                </p>
+                <p matLine>
+                    {{details.division}}
+                    :- {{details.divDescription}}
+                </p>
+                <p matLine>
+                    {{details.group}}
+                    :- {{details.groupDescription}}
+                </p>
+                <p matLine>
+                    {{details.class}}
+                    :- {{details.classDescription}}
+                </p>
+
+            </mat-card-content>
+            <mat-card-actions align="end">
+                <button color="primary" mat-raised-button disabled>Edit</button>
+                <button color="warn" mat-raised-button disabled>Delete</button>
+
+            </mat-card-actions>
+            <button mat-button (click)="backToDBoard()"> Back </button>
+
+        </mat-card>
+    </div>
 </div>

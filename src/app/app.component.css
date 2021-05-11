@@ -1,0 +1,12 @@
+button {
+    margin: 3rem;
+}
+
+#back {
+    height: 100%;
+    width: 100%;
+    color: #fff;
+    background-image: url("src/assets/3.png");
+    background-size: 100%;
+    background-size: cover;
+}

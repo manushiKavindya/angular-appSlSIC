@@ -1,0 +1,122 @@
+<div id="back" class="container">
+    <div id="title" class="mat-display-3">{{ title }}</div>
+    <div id="search">
+        <mat-form-field sfloatLabel="never" appearance="outline">
+            <mat-label>Search Here</mat-label>
+            <input matInput type="text" #txt>
+            <mat-hint align="end">Case Sensitive</mat-hint>
+        </mat-form-field>
+        <button id="icon" mat-button (click)="getVal(txt)">
+            <mat-icon >
+                search
+            </mat-icon>
+        </button>
+        <mat-form-field floatLabel="never" appearance="fill">
+            <mat-label>Search By</mat-label>
+            <mat-select [(value)]="selectedLevel">
+                <mat-option value="Fived">Five Digit Code</mat-option>
+                <mat-option value="Class">Class</mat-option>
+                <mat-option value="Group">Group</mat-option>
+                <mat-option value="Division">Division</mat-option>
+                <mat-option value="Section">Section</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <div id="login">
+        <button mat-raised-button color="primary" (click)="login()"> EDITOR LOGIN </button>
+    </div>
+
+
+    <div *ngIf="selectedLevel === 'Fived'">
+        <mat-list *ngFor="let fived of fived">
+            <mat-divider></mat-divider>
+            <mat-card>
+                <mat-card-title>
+                    {{fived.fived}}
+                </mat-card-title>
+                <mat-card-content>
+                    {{fived.description}}
+                </mat-card-content>
+                <mat-card-actions align="end">
+                    <button color="primary" mat-stroked-button (click)="fiveDDetails(fived.fived)">View</button>
+                </mat-card-actions>
+            </mat-card>
+        </mat-list>
+    </div>
+
+    <div *ngIf="selectedLevel === 'Class'">
+        <mat-list *ngFor="let class of class">
+            <mat-divider></mat-divider>
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title>
+                        {{ class.class_id}}
+                    </mat-card-title>
+                    <mat-card-content>
+                        {{class.class_description}}
+                    </mat-card-content>
+                </mat-card-header>
+                <mat-card-actions align="end">
+                    <button color="primary" mat-stroked-button (click)="classDetails(class.class_id)">View</button>
+                </mat-card-actions>
+            </mat-card>
+        </mat-list>
+    </div>
+    <div *ngIf="selectedLevel === 'Group'">
+        <mat-list *ngFor="let group of group">
+            <mat-divider></mat-divider>
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title>
+                        {{group.group_id}}
+                    </mat-card-title>
+                    <mat-card-content>
+                        {{group.group_description}}
+                    </mat-card-content>
+                </mat-card-header>
+                <mat-card-actions align="end">
+                    <button color="primary" mat-stroked-button (click)="groupDetails(group.group_id)">View</button>
+                </mat-card-actions>
+            </mat-card>
+        </mat-list>
+    </div>
+
+    <div *ngIf="selectedLevel === 'Division'">
+        <mat-list *ngFor="let division of division">
+            <mat-divider></mat-divider>
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title>
+                        {{division.division_id}}
+                    </mat-card-title>
+                    <mat-card-content>
+                        {{division.division_description}}
+                    </mat-card-content>
+                </mat-card-header>
+                <mat-card-actions align="end">
+                    <button color="primary" mat-stroked-button (click)="divDetails(division.division_id)">View</button>
+                </mat-card-actions>
+            </mat-card>
+        </mat-list>
+    </div>
+
+    <div *ngIf="selectedLevel === 'Section'">
+        <mat-list *ngFor="let section of section">
+            <mat-divider></mat-divider>
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title>
+                        {{section.section_id}}
+                    </mat-card-title>
+                    <mat-card-content>
+                        {{section.section_description}}
+                    </mat-card-content>
+                </mat-card-header>
+                <mat-card-actions align="end">
+                    <button color="primary" mat-stroked-button (click)="scnDetails(section.section_id)">View</button>
+                </mat-card-actions>
+            </mat-card>
+        </mat-list>
+    </div>
+</div>

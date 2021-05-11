@@ -8,9 +8,6 @@ import { Group } from '../models/Group';
 import { Div } from 'src/app/models/Div';
 import { Scn } from '../models/Scn';
 
-
-
-
 import { environment } from 'src/environments/environment';
 
 
@@ -21,6 +18,7 @@ export class FiveDService {
 // isicsURL:string = environment.apiBase + '/fived/fish';
 
   constructor(private http:HttpClient) { }
+  private code : string;
 
 
   getFiveDs(keyWord:string):Observable<{ DATA: FiveD[] }> {
@@ -48,6 +46,14 @@ export class FiveDService {
     const sectionsURL:string = environment.apiBase + '/section/' + keyWord;
 
     return this.http.get<{ DATA: Scn[] }>(sectionsURL);
+  }
+
+  setCode(level_id:string){
+    this.code = level_id;
+
+  }
+  getCode():string{
+    return this.code;
   }
 
 

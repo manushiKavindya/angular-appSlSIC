@@ -1,1 +1,24 @@
-<p>section works!</p>
+<mat-card id="card">
+    <mat-card-title>
+        <p color="primary">
+            {{details.section_id}}
+            {{details.section_description}}
+        </p>
+    </mat-card-title>
+    <mat-card-content>
+        <ul matLine class="mat-body-2">
+            Division List
+            <div *ngFor= "let sub of sub">
+                {{sub.division_id}}
+                 - {{sub.division_description}}
+
+            </div>
+        </ul>
+    </mat-card-content>
+
+    <mat-card-actions align="end">
+        <button color="primary" mat-raised-button disabled >Edit</button>
+        <button color="warn" mat-raised-button disabled >Delete</button>
+    </mat-card-actions>
+</mat-card>
+<button mat-button (click)="backToDBoard()"> Back </button>

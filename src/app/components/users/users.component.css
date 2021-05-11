@@ -1,0 +1,17 @@
+#log{
+    text-align: center;
+
+}
+.h1{
+    margin-top: 3rem;
+}
+
+#text{
+    margin-right: 1rem;
+}
+
+#all{
+    text-align: center;
+    background-image: url("src/assets/4.png");
+    background-size: cover;
+}

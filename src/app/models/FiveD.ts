@@ -8,8 +8,8 @@ export class FiveD {
     description: string;
     classDescription: string;
     groupDescription: string;
-    divisionDescription: string;
-    sectionDescription: string;
+    divDescription: string;
+    scnDescription: string;
     is_deleted: boolean;
 
 }

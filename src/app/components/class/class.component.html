@@ -1,15 +1,38 @@
-<p> This is page of the details </p>
-<div>
-    <p>
-        {{details.fived}}
-        :- {{ details.description }}
-        {{details.class}}
-        {{details.classDescription}}
-        {{details.group}}
-        {{details.groupDescription}}
-        {{details.division}}
-        {{details.divisionDescription}}
-        {{details.section}}
-        {{details.sectionDescription}}
-    </p>
-</div>
+<mat-card id="card">
+    <mat-card-title>
+        <p color="primary">
+            {{details.class_id}}
+            {{details.class_description}}
+        </p>
+    </mat-card-title>
+    <mat-card-content>
+        <p matLine>
+            {{details.section_id}}
+            :- {{details.section_description}}
+            ..............
+        </p>
+        <p matLine>
+            {{details.division_id}}
+            :- {{details.division_description}}
+        </p>
+        <p matLine>
+            {{details.group_id}}
+            :- {{details.group_description}}
+        </p>
+
+        <ul matLine class="mat-body-2">
+            FiveD List
+            <div *ngFor= "let sub of sub">
+                {{sub.fived_id}}
+                 - {{sub.fived_description}}
+
+            </div>
+        </ul>
+        <!-- {{details.fiveD_list}} -->
+    </mat-card-content>
+    <mat-card-actions align="end">
+        <button color="primary" mat-raised-button disabled>Edit</button>
+        <button color="warn" mat-raised-button disabled>Delete</button>
+    </mat-card-actions>
+</mat-card>
+<button mat-button (click)="backToDBoard()"> Back </button>

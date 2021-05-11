@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Group } from '../../models/Group';
-import { GroupService } from '../../services/group.service';
+import { Router } from '@angular/router'
+import { FiveDService } from 'src/app/services/fived.service';
 
 @Component({
   selector: 'app-group',
@@ -8,15 +9,38 @@ import { GroupService } from '../../services/group.service';
   styleUrls: ['./group.component.css']
 })
 export class GroupComponent implements OnInit {
-  group:Group[]; 
+  title = 'Group Page';
+  details: Group;
+  sub: any;
+  constructor(private fivedService: FiveDService, private router: Router) { }
 
-  constructor(private groupService:GroupService) { }
 
   ngOnInit(): void {
-    const userInput:string = "fish";
-    this.groupService.getIsics(userInput).subscribe(groups => {
-      this.group = groups.DATA;
-    })
+    console.log('in group');
+    this.getPage();
+
   }
 
+  getPage() {
+    console.log('in Page');
+    let fid = this.fivedService.getCode();
+    console.log('second' + fid);
+
+    this.fivedService.getGroups(fid).subscribe(det => {
+      this.details = det.DATA[0];
+      this.sub = this.details.sub_list[0];
+      console.log(this.sub[0]);
+      this.sub.forEach((data =>{
+        console.log(data.class_id);
+      }))
+    });
+
+    console.log('end');
+  }
+
+  backToDBoard() {
+    console.log('back');
+
+    this.router.navigate([``]);
+  }
 }

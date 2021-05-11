@@ -1,1 +1,29 @@
-<p>division works!</p>
+<mat-card id="card">
+    <mat-card-title>
+        <p color="primary">
+            {{details.division_id}}
+            {{details.division_description}}
+        </p>
+    </mat-card-title>
+    <mat-card-content>
+        <p matLine>
+            {{details.section_id}}
+            :- {{details.section_description}}
+        </p>
+        <ul matLine class="mat-body-2">
+            Group List
+            <div *ngFor= "let sub of sub">
+                {{sub.group_id}}
+                 - {{sub.group_description}}
+
+            </div>
+        </ul>
+
+
+    </mat-card-content>
+    <mat-card-actions align="end">
+        <button color="primary" mat-raised-button disabled >Edit</button>
+        <button color="warn" mat-raised-button disabled>Delete</button>
+    </mat-card-actions>
+</mat-card>
+<button mat-button (click)="backToDBoard()"> Back </button>

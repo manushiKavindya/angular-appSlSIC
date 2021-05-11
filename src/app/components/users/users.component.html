@@ -1,1 +1,77 @@
-<p>users works!</p>
+<div id="all" class="container">
+  <div *ngIf="loggedIn === false">
+    <h1>User Register</h1>
+    <div>
+      <mat-form-field id="text" color="primary" sfloatLabel="never" appearance="standard">
+        <mat-label>First Name</mat-label>
+        <input matInput type="text" #first_name>
+      </mat-form-field>
+
+      <mat-form-field id="text" color="primary" sfloatLabel="never" appearance="standard">
+        <mat-label>Last Name</mat-label>
+        <input matInput type="text" #last_name>
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field id="text" color="primary" sfloatLabel="never" appearance="standard">
+        <mat-label>Email</mat-label>
+        <input matInput type="email" #email>
+      </mat-form-field>
+
+      <mat-form-field id="text" color="primary" sfloatLabel="never" appearance="standard">
+        <mat-label>Phone Number</mat-label>
+        <input matInput type="text" #phone_number>
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field id="text" color="primary" sfloatLabel="never" appearance="standard">
+        <mat-label>Username</mat-label>
+        <input matInput type="text" #username>
+      </mat-form-field>
+
+      <mat-form-field id="text" color="primary" sfloatLabel="never" appearance="standard">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" #password>
+        <mat-hint>4 - 6 characters</mat-hint>
+
+      </mat-form-field>
+    </div>
+
+    <button mat-raised-button color="primary" (click)="newUser(username.value,password.value,first_name.value,last_name.value,email.value,phone_number.value)">
+      New User
+    </button>
+
+    <button mat-button color="primary" (click)="userLoginPage()">sign in</button>
+  </div>
+  <button mat-button (click)="backToDBoard()">BACK</button>
+</div>
+
+<div id="all" class="container" *ngIf="loggedIn === true">
+  <h1>User Login</h1>
+
+  <div>
+    <mat-form-field color="primary" sfloatLabel="never" appearance="standard">
+      <mat-label>Username</mat-label>
+      <input matInput type="text" #username>
+    </mat-form-field>
+  </div>
+
+  <div>
+    <mat-form-field color="primary" sfloatLabel="never" appearance="standard">
+      <mat-label>Password</mat-label>
+      <input matInput type="password" #password>
+      <mat-hint>4 - 6 characters</mat-hint>
+
+    </mat-form-field>
+  </div>
+
+  <button mat-raised-button color="primary" (click)="userLogin(username.value, password.value)">
+    LOGIN
+  </button>
+</div>
+
+<div *ngIf="loggedIn === true">  
+  <button mat-button (click)="newUserPage()">BACK</button>
+</div>

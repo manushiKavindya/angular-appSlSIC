@@ -1,1 +1,35 @@
-<p>group works!</p>
+<mat-card id="card">
+    <mat-card-title>
+
+        <p color="primary">
+            {{details.group_id}}
+            :- {{details.group_description}}
+        </p>
+    </mat-card-title>
+    <mat-card-content>
+        <p matLine>
+            {{details.section_id}}
+            :- {{details.section_description}}
+        </p>
+
+        <p matLine>
+            {{details.division_id}}
+            :- {{details.division_description}}
+        </p>
+        <ul matLine class="mat-body-2">
+            Class List
+            <div *ngFor= "let sub of sub">
+                {{sub.class_id}}
+                 - {{sub.class_description}}
+
+            </div>
+        </ul>
+
+
+    </mat-card-content>
+    <mat-card-actions align="end">
+        <button color="primary" mat-raised-button disabled>Edit</button>
+        <button color="warn" mat-raised-button disabled>Delete</button>
+    </mat-card-actions>
+</mat-card>
+<button mat-button (click)="backToDBoard()"> Back </button>
